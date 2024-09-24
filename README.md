@@ -2,7 +2,7 @@
 
 # Sahid Jafar
 
-## API Documentation with swagger
+## API Documentation
 
 ### Swagger
 
