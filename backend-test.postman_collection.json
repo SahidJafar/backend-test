@@ -1,0 +1,2433 @@
+{
+	"info": {
+		"_postman_id": "48bbaae0-f1cf-41f6-b183-a7bd6eef8501",
+		"name": "backend-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19992489"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin1@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"admin1@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "688"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b0-tgbMhypwVa3xBvHvwY4mHLcSyfs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 03:54:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"593b20ac-0103-4585-accf-3b27514a908a\",\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5M2IyMGFjLTAxMDMtNDU4NS1hY2NmLTNiMjc1MTRhOTA4YSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDYzNjQyLCJleHAiOjE3MjcwNjcyNDJ9.kLmSD3Ayf8B0rHsRPfiI3_8voaZ60EZuG-7cMwp7PWo\",\n            \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5M2IyMGFjLTAxMDMtNDU4NS1hY2NmLTNiMjc1MTRhOTA4YSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDYzNjQyLCJleHAiOjE3MjcxNTAwNDJ9.3gvSl3jOnuJHnKq0oHRjdTvR9KupkXzFM_BWETLDxxY\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5M2IyMGFjLTAxMDMtNDU4NS1hY2NmLTNiMjc1MTRhOTA4YSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDY2NTAxLCJleHAiOjE3MjcwNzAxMDF9.6AikkTKdJ6aKvR9MmMnbHINP6YOKzsT5QW-i5hbgOkk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/users/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-eCWHxhPl9LUDnk/tpoe8PTkQCog\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 04:41:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Logout successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "whoAmI",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5M2IyMGFjLTAxMDMtNDU4NS1hY2NmLTNiMjc1MTRhOTA4YSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDY3MDA4LCJleHAiOjE3MjcwNzA2MDh9.v-Y6trsTZ-oMIzVbSauS5vES3ewSI-00EBAp-rwADPo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "whoAmI",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "648"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"288-bkbu9kM0hrjyNphQRtva7uiIfAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jun 2024 05:33:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Berhasil mendapatkan data user\",\n    \"data\": {\n        \"id\": \"30c11aae-49b1-4719-9631-b31ef8d33251\",\n        \"role\": \"superadmin\",\n        \"name\": \"Super Admin 1\",\n        \"email\": \"superadmin1@gmail.com\",\n        \"password\": \"$2b$10$4O6T3pbnveJLUcRlzDDFh.zT/tD1syAb6J3wgfDocLiffeE3rWc72\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTczOTI1MTUsImV4cCI6MTcxNzM5NjExNX0.9Ua8O_VLg1P9_tZkLMR_Teq4NG4QronaD8Sz5PzFsg4\",\n        \"refresh_token\": null,\n        \"created_at\": \"2024-06-03T05:00:50.423Z\",\n        \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin 3\",\r\n    \"email\":\"admin3@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"admin 3\",\r\n    \"email\":\"admin3@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-DYhE4ZyMq6kQD4EIFqAhl7BTzwE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 05:20:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data inserted successfully\",\n    \"data\": {\n        \"name\": \"admin 3\",\n        \"email\": \"admin3@gmail.com\",\n        \"password\": \"$2b$10$qptM6t.lUpiJvtYZIwdf5Omwp0fS2PylWXzksGYHnk1y1p/Ckj/Rm\",\n        \"id\": \"ed5d29b8-e96f-4a54-b239-1cb7a22f47bc\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5M2IyMGFjLTAxMDMtNDU4NS1hY2NmLTNiMjc1MTRhOTA4YSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDcwMjg2LCJleHAiOjE3MjcxNTY2ODZ9.87BtQa8-wm1OiQlRiJT8bcmrfrKQD8f9kjt2y2XhjN8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5M2IyMGFjLTAxMDMtNDU4NS1hY2NmLTNiMjc1MTRhOTA4YSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDcwMjg2LCJleHAiOjE3MjcxNTY2ODZ9.87BtQa8-wm1OiQlRiJT8bcmrfrKQD8f9kjt2y2XhjN8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/users/refresh-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "337"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"151-ud9QbSmn9HASc8H718y37b5H15E\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 06:03:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Token refreshed successfully\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU0ZDA3MDcwLWFmNWEtNDBiMC05NTFkLTNjYzE5ZjI4MDc4MyIsIm5hbWUiOiJBZG1pbiAyIiwiZW1haWwiOiJhZG1pbjJAZ21haWwuY29tIiwiaWF0IjoxNzI3MDcxNDA5LCJleHAiOjE3MjcwNzUwMDl9.8PCRdmoBNwzKR9p7abMLsCiiGSoJCLNPJ1tiTcZy_Zg\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Location (API Eksternal)",
+			"item": [
+				{
+					"name": "Get Province",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://alamat.thecloudalert.com/api/provinsi/get/\n",
+							"protocol": "https",
+							"host": [
+								"alamat",
+								"thecloudalert",
+								"com"
+							],
+							"path": [
+								"api",
+								"provinsi",
+								"get",
+								"\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get City",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://alamat.thecloudalert.com/api/kabkota/get/?d_provinsi_id=1\n",
+							"protocol": "https",
+							"host": [
+								"alamat",
+								"thecloudalert",
+								"com"
+							],
+							"path": [
+								"api",
+								"kabkota",
+								"get",
+								""
+							],
+							"query": [
+								{
+									"key": "d_provinsi_id",
+									"value": "1\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get District",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://alamat.thecloudalert.com/api/kecamatan/get/?d_kabkota_id=1\n",
+							"protocol": "https",
+							"host": [
+								"alamat",
+								"thecloudalert",
+								"com"
+							],
+							"path": [
+								"api",
+								"kecamatan",
+								"get",
+								""
+							],
+							"query": [
+								{
+									"key": "d_kabkota_id",
+									"value": "1\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub District",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://alamat.thecloudalert.com/api/kelurahan/get/?d_kecamatan_id=1 ",
+							"protocol": "https",
+							"host": [
+								"alamat",
+								"thecloudalert",
+								"com"
+							],
+							"path": [
+								"api",
+								"kelurahan",
+								"get",
+								""
+							],
+							"query": [
+								{
+									"key": "d_kecamatan_id",
+									"value": "1 "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "CreateDataEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNWZmMDZmLTgzNzItNDgxOS04YWI0LWE3MGVhYTU5MmVmNCIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MTExMTU3LCJleHAiOjE3MjcxMTQ3NTd9.kFroGIKxuqGreAva93VXna37oyg0uWX2lAYhaRJZsMo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullname",
+									"value": "Sahid Jafar",
+									"type": "text"
+								},
+								{
+									"key": "no_hp",
+									"value": "081234567",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Pakusarakan Lama",
+									"type": "text"
+								},
+								{
+									"key": "province_id",
+									"value": "9",
+									"description": "provinsi (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "65",
+									"description": "kota (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "district_id",
+									"value": "794",
+									"description": "kecamatan (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "subdistrict_id",
+									"value": "9008",
+									"description": "kelurahan (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "junior programmer",
+									"type": "text"
+								},
+								{
+									"key": "date_joined",
+									"value": "2024-01-01",
+									"description": "date",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "aktif",
+									"description": "enum(\"status\", [\"aktif\", \"tidak aktif\"])",
+									"type": "text"
+								},
+								{
+									"key": "bank_name",
+									"value": "BRI",
+									"type": "text"
+								},
+								{
+									"key": "bank_account",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sahid/Downloads/sahid11.sj.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateDataEmployee",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullname",
+											"value": "Sahid Jafar",
+											"type": "text"
+										},
+										{
+											"key": "no_hp",
+											"value": "081234567",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Pakusarakan Lama",
+											"type": "text"
+										},
+										{
+											"key": "province_id",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "city_id",
+											"value": "65",
+											"type": "text"
+										},
+										{
+											"key": "district_id",
+											"value": "794",
+											"type": "text"
+										},
+										{
+											"key": "subdistrict_id",
+											"value": "9010",
+											"type": "text"
+										},
+										{
+											"key": "position",
+											"value": "junior programmer",
+											"type": "text"
+										},
+										{
+											"key": "date_joined",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "aktif",
+											"description": "enum(\"status\", [\"aktif\", \"tidak aktif\"])",
+											"type": "text"
+										},
+										{
+											"key": "bank_name",
+											"value": "BRI",
+											"type": "text"
+										},
+										{
+											"key": "bank_account",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/sahid11.sj.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/employees",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "432"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b0-c47WBPhtXwyaqJTvxI/q7/Q55kU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 10:55:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data inserted successfully\",\n    \"data\": {\n        \"fullname\": \"Sahid Jafar\",\n        \"no_hp\": \"081234567\",\n        \"address\": \"Pakusarakan Lama\",\n        \"province_id\": \"9\",\n        \"city_id\": \"65\",\n        \"district_id\": \"794\",\n        \"subdistrict_id\": \"9010\",\n        \"position\": \"junior programmer\",\n        \"date_joined\": \"2024-01-01\",\n        \"status\": \"aktif\",\n        \"bank_name\": \"BRI\",\n        \"bank_account\": \"12345678\",\n        \"id\": \"66e29a9f-3147-4d36-9b73-2dec7e3626b4\",\n        \"image\": \"1727088933965-sahid11.sj.jpg\"\n    }\n}"
+						},
+						{
+							"name": "Error (404)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullname",
+											"value": "Sahid Jafar",
+											"type": "text"
+										},
+										{
+											"key": "no_hp",
+											"value": "081234567",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Pakusarakan Lama",
+											"type": "text"
+										},
+										{
+											"key": "province_id",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "city_id",
+											"value": "65",
+											"type": "text"
+										},
+										{
+											"key": "district_id",
+											"value": "794",
+											"type": "text"
+										},
+										{
+											"key": "subdistrict_id",
+											"value": "9010",
+											"type": "text"
+										},
+										{
+											"key": "position",
+											"value": "junior programmer",
+											"type": "text"
+										},
+										{
+											"key": "date_joined",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "aktif",
+											"description": "enum(\"status\", [\"aktif\", \"tidak aktif\"])",
+											"type": "text"
+										},
+										{
+											"key": "bank_name",
+											"value": "BRI",
+											"type": "text"
+										},
+										{
+											"key": "bank_account",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/sahid11.sj.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/employees",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"employees"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-Vx4S8tFAXdnoZMIkm+8hva/y7Is\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 10:56:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 404,\n    \"status\": \"error\",\n    \"message\": \"Location not found\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateDataEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ3Zjg2MzVmLTZkMDUtNGQ3YS05MTcwLWM3ZWE0ZDgyYjQ5MiIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDk1NDQwLCJleHAiOjE3MjcwOTkwNDB9.s8yqT-DupTx6QdNfoBVM0cr-Eb2OsCZbCX-qNZFY1f8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullname",
+									"value": "Sahid Jafar",
+									"type": "text"
+								},
+								{
+									"key": "no_hp",
+									"value": "081234567",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Pakusarakan Lama",
+									"type": "text"
+								},
+								{
+									"key": "province_id",
+									"value": "9",
+									"description": "provinsi (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "65",
+									"description": "kota (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "district_id",
+									"value": "794",
+									"description": "kecamatan (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "subdistrict_id",
+									"value": "9010",
+									"description": "kelurahan (Api Eksternal)",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "junior programmer",
+									"type": "text"
+								},
+								{
+									"key": "date_joined",
+									"value": "2024-01-01",
+									"description": "date",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "aktif",
+									"description": "enum(\"status\", [\"aktif\", \"tidak aktif\"])",
+									"type": "text"
+								},
+								{
+									"key": "bank_name",
+									"value": "BRI",
+									"type": "text"
+								},
+								{
+									"key": "bank_account",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sahid/Downloads/sahid11.sj.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/employees/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e192dfbc-d674-4eb6-a3c8-ee56a7cc2598"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateDataEmployee",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullname",
+											"value": "Sahid Jafar",
+											"type": "text"
+										},
+										{
+											"key": "no_hp",
+											"value": "081234567",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Pakusarakan Lama",
+											"type": "text"
+										},
+										{
+											"key": "province_id",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "city_id",
+											"value": "65",
+											"type": "text"
+										},
+										{
+											"key": "district_id",
+											"value": "794",
+											"type": "text"
+										},
+										{
+											"key": "subdistrict_id",
+											"value": "9010",
+											"type": "text"
+										},
+										{
+											"key": "position",
+											"value": "junior programmer",
+											"type": "text"
+										},
+										{
+											"key": "date_joined",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "aktif",
+											"description": "enum(\"status\", [\"aktif\", \"tidak aktif\"])",
+											"type": "text"
+										},
+										{
+											"key": "bank_name",
+											"value": "BRI",
+											"type": "text"
+										},
+										{
+											"key": "bank_account",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/sahid11.sj.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/employees/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0fcd9a73-e8b3-4e5e-bed2-c8993db08687"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "517"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"205-Hw6ZfQMOMmbbGIZ+n7hj9yMYEFs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 12:31:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data updated successfully\",\n    \"data\": {\n        \"fullname\": \"Sahid Jafar\",\n        \"no_hp\": \"081234567\",\n        \"address\": \"Pakusarakan Lama\",\n        \"province_id\": 9,\n        \"city_id\": 65,\n        \"district_id\": 794,\n        \"subdistrict_id\": 9010,\n        \"position\": \"junior programmer\",\n        \"date_joined\": \"2023-12-31T17:00:00.000Z\",\n        \"status\": \"aktif\",\n        \"bank_name\": \"BRI\",\n        \"bank_account\": \"12345678\",\n        \"image\": \"1727094702175-sahid11.sj.jpg\",\n        \"id\": \"0fcd9a73-e8b3-4e5e-bed2-c8993db08687\",\n        \"created_at\": \"2024-09-23T11:41:53.000Z\",\n        \"updated_at\": \"2024-09-23T11:41:53.000Z\"\n    }\n}"
+						},
+						{
+							"name": "Error (404)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullname",
+											"value": "Sahid Jafar",
+											"type": "text"
+										},
+										{
+											"key": "no_hp",
+											"value": "081234567",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Pakusarakan Lama",
+											"type": "text"
+										},
+										{
+											"key": "province_id",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "city_id",
+											"value": "65",
+											"type": "text"
+										},
+										{
+											"key": "district_id",
+											"value": "794",
+											"type": "text"
+										},
+										{
+											"key": "subdistrict_id",
+											"value": "9010",
+											"type": "text"
+										},
+										{
+											"key": "position",
+											"value": "junior programmer",
+											"type": "text"
+										},
+										{
+											"key": "date_joined",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "aktif",
+											"description": "enum(\"status\", [\"aktif\", \"tidak aktif\"])",
+											"type": "text"
+										},
+										{
+											"key": "bank_name",
+											"value": "BRI",
+											"type": "text"
+										},
+										{
+											"key": "bank_account",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/sahid11.sj.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/employees/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-bwOBhvOZfGhxQkBXh5uMaQ3qtlc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 12:32:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 404,\n    \"status\": \"error\",\n    \"message\": \"Employee not found\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteDataEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ3Zjg2MzVmLTZkMDUtNGQ3YS05MTcwLWM3ZWE0ZDgyYjQ5MiIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MDk1NDQwLCJleHAiOjE3MjcwOTkwNDB9.s8yqT-DupTx6QdNfoBVM0cr-Eb2OsCZbCX-qNZFY1f8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/employees/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e192dfbc-d674-4eb6-a3c8-ee56a7cc2598"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DeleteDataEmployee",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/employees/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "e192dfbc-d674-4eb6-a3c8-ee56a7cc2598"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-SFQCmMuTSLBDwK3PgfKovsRnnWU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 12:59:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "getListEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ3Zjg2MzVmLTZkMDUtNGQ3YS05MTcwLWM3ZWE0ZDgyYjQ5MiIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MTA3NjUxLCJleHAiOjE3MjcxMTEyNTF9.bMiewmHRHqZVM3FcqgIxpdAT8Pcca9b5Cb5YgqOvM_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getListEmployee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/employees",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1026"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"402-1/AjKgV6jwDtWDJBfcyQ8Q12Od0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 13:27:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"22a4d97b-b1a4-49ec-ae56-38367c796e88\",\n            \"fullname\": \"Herlan\",\n            \"no_hp\": \"081234567\",\n            \"address\": \"Pakusarakan Lama\",\n            \"province\": \"Jawa Barat\",\n            \"city\": \"Kabupaten Bandung Barat\",\n            \"district\": \"Ngamprah\",\n            \"subdistrict\": \"Tanimulya\",\n            \"position\": \"junior programmer\",\n            \"date_joined\": \"2023-12-31T17:00:00.000Z\",\n            \"status\": \"aktif\",\n            \"image\": \"1727098031614-sahid11.sj.jpg\",\n            \"bank_name\": \"BRI\",\n            \"bank_account\": \"12345678\",\n            \"created_at\": \"2024-09-23T13:27:13.000Z\",\n            \"updated_at\": \"2024-09-23T13:27:13.000Z\"\n        },\n        {\n            \"id\": \"290d400a-0bfb-40d6-acb5-7236815a3b49\",\n            \"fullname\": \"Sahid Jafar\",\n            \"no_hp\": \"081234567\",\n            \"address\": \"Pakusarakan Lama\",\n            \"province\": \"Jawa Barat\",\n            \"city\": \"Kabupaten Bandung Barat\",\n            \"district\": \"Ngamprah\",\n            \"subdistrict\": \"Ngamprah\",\n            \"position\": \"junior programmer\",\n            \"date_joined\": \"2023-12-31T17:00:00.000Z\",\n            \"status\": \"aktif\",\n            \"image\": \"1727096913123-sahid11.sj.jpg\",\n            \"bank_name\": \"BRI\",\n            \"bank_account\": \"12345678\",\n            \"created_at\": \"2024-09-23T13:08:38.000Z\",\n            \"updated_at\": \"2024-09-23T13:08:38.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getEmployeeById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNWZmMDZmLTgzNzItNDgxOS04YWI0LWE3MGVhYTU5MmVmNCIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MTEzNjU2LCJleHAiOjE3MjcxMTcyNTZ9.Q5oCY7w6QAmgr3tu-egEzll85D6pxj4X_a5HaTyn89A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/employees/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "b3376516-51a2-45e8-956b-479c96a2c780"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getEmployeeById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/employees/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "b3376516-51a2-45e8-956b-479c96a2c780"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "553"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"229-dFReCZ8fmxPHfGmSCP+H7JBZgRM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 17:54:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data fetched successfully\",\n    \"data\": {\n        \"id\": \"b3376516-51a2-45e8-956b-479c96a2c780\",\n        \"fullname\": \"Sahid Jafar\",\n        \"no_hp\": \"081234567\",\n        \"address\": \"Pakusarakan Lama\",\n        \"subdistrict\": \"Tanimulya\",\n        \"district\": \"Ngamprah\",\n        \"city\": \"Kabupaten Bandung Barat\",\n        \"province\": \"Jawa Barat\",\n        \"position\": \"junior programmer\",\n        \"date_joined\": \"2023-12-31T17:00:00.000Z\",\n        \"status\": \"aktif\",\n        \"image\": \"1727111168347-sahid11.sj.jpg\",\n        \"bank_name\": \"BRI\",\n        \"bank_account\": \"12345678\",\n        \"created_at\": \"2024-09-23T17:06:08.000Z\",\n        \"updated_at\": \"2024-09-23T17:06:08.000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Salary",
+			"item": [
+				{
+					"name": "CreateDataSalary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNWZmMDZmLTgzNzItNDgxOS04YWI0LWE3MGVhYTU5MmVmNCIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MTEzNjU2LCJleHAiOjE3MjcxMTcyNTZ9.Q5oCY7w6QAmgr3tu-egEzll85D6pxj4X_a5HaTyn89A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee_id\": \"b3376516-51a2-45e8-956b-479c96a2c780\",\r\n    \"basic_salary\": 5000000,         // Gaji Pokok\r\n    \"bonus\": 1000000,                // Bonus\r\n    \"deduction\": 500000,             // Potongan\r\n    \"period_start\": \"2024-08-01\",    // Awal periode gaji\r\n    \"period_end\": \"2024-08-30\",      // Akhir periode gaji\r\n    \"payment_date\": \"2024-09-01\",    // Tanggal pembayaran gaji\r\n    \"payment_method\": \"transfer\"     // Metode pembayaran (cash/transfer)\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/salaries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"salaries"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateDataSalary",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"employee_id\": \"b3376516-51a2-45e8-956b-479c96a2c780\",\r\n    \"basic_salary\": 5000000,         // Gaji Pokok\r\n    \"bonus\": 1000000,                // Bonus\r\n    \"deduction\": 500000,             // Potongan\r\n    \"period_start\": \"2024-09-01\",    // Awal periode gaji\r\n    \"period_end\": \"2024-09-30\",      // Akhir periode gaji\r\n    \"payment_date\": \"2024-10-01\",    // Tanggal pembayaran gaji\r\n    \"payment_method\": \"transfer\"     // Metode pembayaran (cash/transfer)\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/salaries",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"salaries"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "641"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"281-DmmC5zp2qSpVmBJSN6/YbJVYpO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 17:06:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Salary, Salary History, and Salary Master created successfully\",\n    \"data\": {\n        \"gaji\": {\n            \"id\": \"e3e21e43-f29c-44f6-8732-fb0ea89384e7\",\n            \"basic_salary\": 5000000,\n            \"bonus\": 1000000,\n            \"deduction\": 500000,\n            \"net_salary\": 5500000\n        },\n        \"riwayat_gaji\": {\n            \"id\": \"c8098b7b-753a-4ccf-a40d-9f7afe9ba10f\",\n            \"payment_date\": \"2024-10-01\",\n            \"payment_method\": \"transfer\"\n        },\n        \"gaji_master\": {\n            \"id\": \"f9f0d746-a019-4cd3-b8b8-caf434bb5372\",\n            \"period_start\": \"2024-09-01\",\n            \"period_end\": \"2024-09-30\",\n            \"employee_id\": \"b3376516-51a2-45e8-956b-479c96a2c780\",\n            \"salary_id\": \"e3e21e43-f29c-44f6-8732-fb0ea89384e7\",\n            \"salary_history_id\": \"c8098b7b-753a-4ccf-a40d-9f7afe9ba10f\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Error (404)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"employee_id\": \"1\",\r\n    \"basic_salary\": 5000000,         // Gaji Pokok\r\n    \"bonus\": 1000000,                // Bonus\r\n    \"deduction\": 500000,             // Potongan\r\n    \"period_start\": \"2024-09-01\",    // Awal periode gaji\r\n    \"period_end\": \"2024-09-30\",      // Akhir periode gaji\r\n    \"payment_date\": \"2024-10-01\",    // Tanggal pembayaran gaji\r\n    \"payment_method\": \"transfer\"     // Metode pembayaran (cash/transfer)\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/salaries",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"salaries"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-bwOBhvOZfGhxQkBXh5uMaQ3qtlc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 17:07:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 404,\n    \"status\": \"error\",\n    \"message\": \"Employee not found\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateDataSalary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNWZmMDZmLTgzNzItNDgxOS04YWI0LWE3MGVhYTU5MmVmNCIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MTEzNjU2LCJleHAiOjE3MjcxMTcyNTZ9.Q5oCY7w6QAmgr3tu-egEzll85D6pxj4X_a5HaTyn89A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"basic_salary\": 7000000,         // Gaji Pokok\r\n    \"bonus\": 1000000,                // Bonus\r\n    \"deduction\": 500000,             // Potongan\r\n    \"period_start\": \"2024-08-01\",    // Awal periode gaji\r\n    \"period_end\": \"2024-08-30\",      // Akhir periode gaji\r\n    \"payment_date\": \"2024-09-01\",    // Tanggal pembayaran gaji\r\n    \"payment_method\": \"transfer\"     // Metode pembayaran (cash/transfer)\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/salaries/:salaryMasterId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"salaries",
+								":salaryMasterId"
+							],
+							"variable": [
+								{
+									"key": "salaryMasterId",
+									"value": "efcfcb83-72a5-45ed-a4a9-d5c565465256"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateDataSalary",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"basic_salary\": 7000000,         // Gaji Pokok\r\n    \"bonus\": 1000000,                // Bonus\r\n    \"deduction\": 500000,             // Potongan\r\n    \"period_start\": \"2024-09-01\",    // Awal periode gaji\r\n    \"period_end\": \"2024-09-30\",      // Akhir periode gaji\r\n    \"payment_date\": \"2024-10-01\",    // Tanggal pembayaran gaji\r\n    \"payment_method\": \"transfer\"     // Metode pembayaran (cash/transfer)\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/salaries/:salaryMasterId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"salaries",
+										":salaryMasterId"
+									],
+									"variable": [
+										{
+											"key": "salaryMasterId",
+											"value": "efcfcb83-72a5-45ed-a4a9-d5c565465256"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "923"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39b-nuaUxaRC58KmW8rxjCv1ttSGuGs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 18:11:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Salary, Salary History, and Salary Master updated successfully\",\n    \"data\": {\n        \"gaji\": {\n            \"id\": \"167fa756-834e-42aa-b853-7f25f8fd4156\",\n            \"basic_salary\": 7000000,\n            \"bonus\": 1000000,\n            \"deduction\": 500000,\n            \"net_salary\": 7500000,\n            \"created_at\": \"2024-09-23T18:01:24.000Z\",\n            \"updated_at\": \"2024-09-23T18:11:30.000Z\"\n        },\n        \"riwayat_gaji\": {\n            \"id\": \"a1a102d6-522b-4658-865c-bf49737849d8\",\n            \"payment_date\": \"2024-09-30T17:00:00.000Z\",\n            \"payment_method\": \"transfer\",\n            \"created_at\": \"2024-09-23T18:01:24.000Z\",\n            \"updated_at\": \"2024-09-23T18:11:30.000Z\"\n        },\n        \"gaji_master\": {\n            \"id\": \"efcfcb83-72a5-45ed-a4a9-d5c565465256\",\n            \"period_start\": \"2024-08-31T17:00:00.000Z\",\n            \"period_end\": \"2024-09-29T17:00:00.000Z\",\n            \"employee_id\": \"b3376516-51a2-45e8-956b-479c96a2c780\",\n            \"salary_id\": \"167fa756-834e-42aa-b853-7f25f8fd4156\",\n            \"salary_history_id\": \"a1a102d6-522b-4658-865c-bf49737849d8\",\n            \"created_at\": \"2024-09-23T18:01:24.000Z\",\n            \"updated_at\": \"2024-09-23T18:11:30.000Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Error (404)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"basic_salary\": 6000000,         // Gaji Pokok\r\n    \"bonus\": 1000000,                // Bonus\r\n    \"deduction\": 500000,             // Potongan\r\n    \"period_start\": \"2024-09-01\",    // Awal periode gaji\r\n    \"period_end\": \"2024-09-30\",      // Akhir periode gaji\r\n    \"payment_date\": \"2024-10-01\",    // Tanggal pembayaran gaji\r\n    \"payment_method\": \"transfer\"     // Metode pembayaran (cash/transfer)\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/salaries/:salaryMasterId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"salaries",
+										":salaryMasterId"
+									],
+									"variable": [
+										{
+											"key": "salaryMasterId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-3VawkxbxWp1kKe9HjwRJpiDqbSk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 17:19:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 404,\n    \"status\": \"error\",\n    \"message\": \"Salary master not found\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteDataSalary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNWZmMDZmLTgzNzItNDgxOS04YWI0LWE3MGVhYTU5MmVmNCIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MTExMTU3LCJleHAiOjE3MjcxMTQ3NTd9.kFroGIKxuqGreAva93VXna37oyg0uWX2lAYhaRJZsMo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/salaries/:salaryMasterId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"salaries",
+								":salaryMasterId"
+							],
+							"variable": [
+								{
+									"key": "salaryMasterId",
+									"value": "f9f0d746-a019-4cd3-b8b8-caf434bb5372"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DeleteDataSalary",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/salaries/:salaryMasterId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"salaries",
+										":salaryMasterId"
+									],
+									"variable": [
+										{
+											"key": "salaryMasterId",
+											"value": "f9f0d746-a019-4cd3-b8b8-caf434bb5372"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"76-OU/isy99iqAcNhGI0N9qC/nlJLo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 17:31:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Salary, Salary History, and Salary Master deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "GetSalarybyEmployeeId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNWZmMDZmLTgzNzItNDgxOS04YWI0LWE3MGVhYTU5MmVmNCIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzI3MTEzNjU2LCJleHAiOjE3MjcxMTcyNTZ9.Q5oCY7w6QAmgr3tu-egEzll85D6pxj4X_a5HaTyn89A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/salaries/:employeeId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"salaries",
+								":employeeId"
+							],
+							"variable": [
+								{
+									"key": "employeeId",
+									"value": "b3376516-51a2-45e8-956b-479c96a2c780"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetSalarybyEmployeeId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/salaries/:employeeId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"salaries",
+										":employeeId"
+									],
+									"variable": [
+										{
+											"key": "employeeId",
+											"value": "b3376516-51a2-45e8-956b-479c96a2c780"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"505-1kUf8gbIxIBcCc6J1tljAPjkZzY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Sep 2024 18:20:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data fetched successfully\",\n    \"data\": {\n        \"employee_id\": \"b3376516-51a2-45e8-956b-479c96a2c780\",\n        \"fullname\": \"Sahid Jafar\",\n        \"no_hp\": \"081234567\",\n        \"address\": \"Pakusarakan Lama\",\n        \"subdistrict\": \"Tanimulya\",\n        \"district\": \"Ngamprah\",\n        \"city\": \"Kabupaten Bandung Barat\",\n        \"province\": \"Jawa Barat\",\n        \"position\": \"junior programmer\",\n        \"date_joined\": \"2023-12-31T17:00:00.000Z\",\n        \"status\": \"aktif\",\n        \"image\": \"1727111168347-sahid11.sj.jpg\",\n        \"bank_name\": \"BRI\",\n        \"bank_account\": \"12345678\",\n        \"created_at\": \"2024-09-23T17:06:08.000Z\",\n        \"updated_at\": \"2024-09-23T17:06:08.000Z\",\n        \"gaji\": [\n            {\n                \"period_start\": \"2024-07-31T17:00:00.000Z\",\n                \"period_end\": \"2024-08-29T17:00:00.000Z\",\n                \"id\": \"167fa756-834e-42aa-b853-7f25f8fd4156\",\n                \"basic_salary\": 7000000,\n                \"bonus\": 1000000,\n                \"deduction\": 500000,\n                \"net_salary\": 7500000,\n                \"created_at\": \"2024-09-23T18:01:24.000Z\",\n                \"updated_at\": \"2024-09-23T18:12:22.000Z\",\n                \"payment_date\": \"2024-08-31T17:00:00.000Z\",\n                \"payment_method\": \"transfer\"\n            },\n            {\n                \"period_start\": \"2024-08-31T17:00:00.000Z\",\n                \"period_end\": \"2024-09-29T17:00:00.000Z\",\n                \"id\": \"35407ada-6698-44da-ae50-9d1e62d5f060\",\n                \"basic_salary\": 5000000,\n                \"bonus\": 1000000,\n                \"deduction\": 500000,\n                \"net_salary\": 5500000,\n                \"created_at\": \"2024-09-23T17:48:09.000Z\",\n                \"updated_at\": \"2024-09-23T17:48:09.000Z\",\n                \"payment_date\": \"2024-09-30T17:00:00.000Z\",\n                \"payment_method\": \"transfer\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
